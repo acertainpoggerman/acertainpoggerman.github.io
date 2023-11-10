@@ -1,0 +1,261 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --background-color: #fafafa;
+    
+    --sidebar-color: #ffffff;
+    --on-sidebar-color: #8a8a8a;
+    --sidebar-hover-color: #ff003c;
+    
+    
+    --sidebar-width-closed: 100px;
+    --sidebar-width-opened: 300px;
+    --sidebar-width-transition: width 500ms ease-out;
+    --sidebar-hover-transition: background-color 250ms ease, color 250ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: var(--background-color);
+}
+
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 8rem;
+    font-weight: 900;
+}
+
+h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+/* SIDEBAR (Start) */
+.sidebar {
+    --sidebar-width: var(--sidebar-width-closed);
+    
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    
+    width: var(--sidebar-width);
+    height: 100%;
+    
+    background-color: #fff;
+    transition: var(--sidebar-width-transition);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.opened {
+    --sidebar-width: var(--sidebar-width-opened);
+}
+
+/* SIDEBAR TOGGLE BUTTON (Start) */
+.sidebar .toggle {
+    width: 48px;
+    aspect-ratio: 1;
+    margin: 12px 27px;
+    border-radius: 12px;
+    align-self: end;
+    
+    font-size: 20px;
+    color: var(--on-sidebar-color);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.opened .toggle .expand-icon,
+.sidebar .toggle .collapse-icon {
+    display: none;
+}
+
+.sidebar .toggle .expand-icon,
+.sidebar.opened .toggle .collapse-icon {
+    display: inline;
+}
+
+.sidebar .toggle:hover {
+    color: white;
+    background-color: #d8d8d8;
+}
+/* SIDEBAR TOGGLE BUTTON (End) */
+
+.sidebar .menu {
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+.sidebar .menu .item {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    width: 100%;
+    
+    text-decoration: none;
+    color: var(--on-sidebar-color);
+    font-size: 24px;
+    font-weight: 600;
+
+    padding: 24px 0;
+    border-radius: 12px;
+}
+
+.sidebar .menu .item:hover {
+    background-color: var(--sidebar-hover-color);
+    color: white
+}
+
+.sidebar .menu .item i {
+    margin-left: 26px;
+}
+
+.sidebar .menu .item .name {
+    font-size: 16px;
+    display: inline-block;
+    
+    width: 100%;
+    transition: var(--sidebar-width-transition);
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.sidebar:not(.opened) .menu .item .name {
+    width: 0;
+}
+
+/* SIDEBAR (End) */
+
+/* ------------ HOME (START) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* MAIN PAGE (Start) */
+#home .main-page {
+    flex: 1 1 auto;
+    height: 100%;
+    background-color: white;
+    
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+#home .main-page #intro {
+    width: 100%;
+    height: 700px;
+    border-radius: 0 0 64px 64px;
+    background-color: #ff003c;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    color: white;
+    scroll-snap-align: start;
+}
+
+#home .main-page #intro a {
+    /* justify-self: ; */
+    position: absolute;
+    bottom: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+#home .main-page #intro a:hover {
+    text-decoration: underline;
+}
+
+#home .main-page #p1,
+#home .main-page #p2,
+#home .main-page #p3 {
+    scroll-snap-align: center;
+}
+
+#home .main-page #p1 {
+    width: 100%;
+    height: 700px;
+    background-color: #fff;
+}
+#home .main-page #p2 {
+    width: 100%;
+    height: 700px;
+    background-color: #f5f6fa;
+}
+#home .main-page #p3 {
+    width: 100%;
+    height: 700px;
+    background-color: #ecedf6;
+}
+
+#home .main-page #footer {
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    scroll-snap-align: end;
+}
+/* MAIN PAGE (End) */
+
+/* ------------ HOME (END) -------------------------------------------------------------------------------------------------------------------------------------- */
+#log-reg {
+    flex-direction: column;
+    background: #221f33;
+}
+
+#log-reg .header {
+    flex: 0 0 auto;
+    
+    padding: 24px;
+    display: flex;
+    color: white
+    /* background-color: red; */
+}
+
+#log-reg .main-page {
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    place-items: center;
+    padding: 4% 0;
+    
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+#log-reg .main-page .form-card {
+    background-color: #efefef;
+    width: 90%;
+    max-width: 1000px;
+    min-height: 600px;
+    border-radius: 48px;
+}
+
+#log-reg form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+}
+
+#log-reg form input[type=text],
+#log-reg form input[type=password] {
+    padding: 12px;
+    font-size: 1.05rem;
+    width: 60%
+    
+}
+/* ------------ LOGIN / REGISTER (START) -------------------------------------------------------------------------------------------------------------------------------------- */
