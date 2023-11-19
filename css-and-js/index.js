@@ -171,7 +171,7 @@ function generateColorBlocks() {
     for (const color of colors) {
         resultSection.innerHTML += `
         <div class="color-block" style="background-color: ${color}; color: white">
-            <a href="item.html" >
+            <a href="javascript:colorInDepth(${color})" >
                 <span class="text">${color}</span>
             </a>
             <div class="copy-wrapper" title="Copy Color">
@@ -194,6 +194,12 @@ function generateColorBlocks() {
             alert(`Copied Color: ${color}`)
         })
     }
+}
+
+
+function colorInDepth(color) {
+    window.sessionStorage.setItem("currentColor", color);
+    location.assign("https://acertainpoggerman.github.io/item.html");
 }
 
 function sayHi() {

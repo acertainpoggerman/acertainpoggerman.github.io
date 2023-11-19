@@ -208,7 +208,7 @@ h4 {
 
 .text h2 {
     color: #9b9dae;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 800;
     font-size: 2rem;
     margin-bottom: 8px;
@@ -642,6 +642,135 @@ h4 {
 
 /* ------------ COLOR 'ITEM' (START) -------------------------------------------------------------------------------------------------------------------------------------- */
 
+#item .main-page {
+    flex: 1 0 auto;
+    
+    display: flex;
+    column-gap: 36px;
+    align-items: center;
+    
+    padding: 0 100px;
+    overflow-y: scroll;
+    
+    /* background-color: red; */
+}
 
+#item .main-page .main-color {
+    flex: 2 0 auto;
+    min-height: 400px;
+    padding: 40px;
+    
+    background-color: white;
+    box-shadow: 0 4px 12px #e1e5eb;
+    border-radius: 24px;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+#item .main-page .main-color .color-block {
+    background-color: #0000ff;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    border-radius: 16px;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#item .main-page .main-color .color-block i {
+    color: white;
+    font-size: 48px;
+    display: none;
+}
+
+#item .main-page .main-color .color-block:hover .copy-wrapper i.unhov,
+#item .main-page .main-color .color-block:hover .copy-wrapper:hover i.hov {
+    display: inline;
+}
+#item .main-page .main-color .color-block:hover .copy-wrapper:hover i.unhov,
+#item .main-page .main-color .color-block:hover .copy-wrapper i.hov {
+    display: none;
+}
+
+#item .main-page .main-color .color-block:hover .save-wrapper i.unhov,
+#item .main-page .main-color .color-block:hover .save-wrapper:hover i.hov {
+    display: inline;
+}
+#item .main-page .main-color .color-block:hover .save-wrapper:hover i.unhov,
+#item .main-page .main-color .color-block:hover .save-wrapper i.hov {
+    display: none;
+}
+
+
+
+#item .main-page .main-color .color-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+#item .main-page .main-color .color-info > div {
+    background-color: #f4f6fc;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+#item .main-page .main-color .color-info .name,
+#item .main-page .main-color .color-info .name span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#item .main-page .main-color .color-info > div span {
+    opacity: 40%;
+}
+
+#item .main-page .main-color .color-info > div:not(.name) span {
+    padding-right: 28px;
+}
+
+
+
+#item .main-page .related-colors {
+    flex: 3 0 auto;
+    min-height: 400px;
+    padding: 40px;
+    
+
+    background-color: white;
+    box-shadow: 0 4px 12px #e1e5eb;
+    border-radius: 24px;  
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+#item .main-page .related-colors > div {
+    background-color: #f4f6fc;
+    
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+#item .main-page .related-colors > div > .block-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    column-gap: 12px;
+}
+
+#item .main-page .related-colors > div > .block-wrapper .color-block {
+    flex: 1 0 auto;
+    background-color: rgb(221, 225, 239);
+    height: 64px;
+    border-radius: 16px;
+}
 
 /* ------------ COLOR 'ITEM' (END) -------------------------------------------------------------------------------------------------------------------------------------- */
