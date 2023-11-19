@@ -573,6 +573,9 @@ h4 {
     color: white;
 }
 
+
+
+
 #explore .main-page .border {
     flex: 0 0 0px;
     padding: 36px;
@@ -594,16 +597,21 @@ h4 {
     grid-template-columns: 25% 25% 25% 25%;
 }
 
-#explore .main-page .border .results > a,
-#explore .main-page .border .results > a:visited {
-    padding: 20px 20px;
+#explore .main-page .border .results > .color-block {
+    min-height: 60px;
+    padding: 0 20px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
     font-weight: bold;
     text-decoration: none;
     
     display: flex;
 }
 
-#explore .main-page .border .results > a .text {
+#explore .main-page .border .results > .color-block .text {
     display: inline-block;
     color: white;
     
@@ -613,6 +621,27 @@ h4 {
     vertical-align: center;
 }
 
-#explore .main-page .border .results > a:hover .text {
+#explore .main-page .border .results > .color-block .copy-wrapper i {
+    font-size: 24px;
+    display: none;
+}
+#explore .main-page .border .results > .color-block:hover .copy-wrapper i.unhov,
+#explore .main-page .border .results > .color-block:hover .copy-wrapper:hover i.hov {
+    display: inline;
+}
+#explore .main-page .border .results > .color-block:hover .copy-wrapper:hover i.unhov,
+#explore .main-page .border .results > .color-block:hover .copy-wrapper i.hov {
+    display: none;
+}
+
+#explore .main-page .border .results > .color-block:hover .text {
     width: 100%;
 }
+
+/* ------------ EXPLORE (END) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------ COLOR 'ITEM' (START) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------ COLOR 'ITEM' (END) -------------------------------------------------------------------------------------------------------------------------------------- */

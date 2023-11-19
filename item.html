@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css-and-js/style.css">
     <title>Document</title>
 </head>
-<body>
+<body id="item">
+    <!-- Sidebar (Start) -->
     <div class="sidebar">
+        <!-- Sidebar Width Toggler (Start) -->
         <div class="toggle">
-            <i class='bx bxs-chevrons-right'></i>
+            <i class='expand-icon bx bxs-chevrons-right' title="Expand Sidebar"></i>
+            <i class='collapse-icon bx bxs-chevrons-left' title="Collapse Sidebar"></i>
         </div>
+        <!-- Sidebar Width Toggler (End) -->
         
+        <!-- Sidebar Menu (Start) -->
         <ul class="menu">
             <li>
                 <a class="item" href="index.html">
@@ -19,18 +26,77 @@
                 </a>
             </li>
             <li>
-                <a class="item" href="pages/explore.html">
-                    <i class='bx bx-search-alt' ></i>
+                <a class="item" href="explore.html">
+                    <i class='bx bx-search-alt'></i>
                     <span class="name">Explore</span>
                 </a>
             </li>
             <li>
-                <a class="item" href="pages/saved.html">
+                <a class="item" href="saved.html">
                     <i class='bx bx-bookmark'></i>
                     <span class="name">Saved</span>
                 </a>
             </li>
+            <li>
+                <a class="item" href="palette">
+                    <i class='bx bx-palette' ></i>
+                    <span class="name">Palette</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="color-theory.html">
+                    <i class='bx bxs-color' ></i>
+                    <span class="name">Color Theory</span>
+                </a>
+            </li>
+            <li>               
+                <a href="login-register.html#login" class="item">
+                    <i class='bx bx-user' ></i>
+                    <span class="name">Login / Register</span>
+                </a>
+            </li>
         </ul>
+
+        <!-- Sidebar Menu (End) -->
     </div>
+    <!-- Sidebar (End) -->
+    
+    <!-- Main Page (Start) -->
+    <div class="main-page">
+        <div class="main-color">
+            Color
+            <div class="color-block"></div>
+        </div>
+        
+        <div class="related-colors">
+            <div class="color-complement">
+                Complementary Color
+                <div class="color-block"></div>
+            </div>
+            <div class="color-anagolous">
+                Analogous Colors
+                <div class="color-block left"></div>
+                <div class="color-block main"></div>
+                <div class="color-block right"></div>
+            </div>
+            <div class="color-triad">
+                Triad
+                <div class="color-block main"></div>
+                <div class="color-block angle120"></div>
+                <div class="color-block angle240"></div>
+            </div>
+            <div class="color-tetrad">
+                Tetrad
+                <div class="color-block main"></div>
+                <div class="color-block angle90"></div>
+                <div class="color-block angle180"></div>
+                <div class="color-block angle240"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Page (End) -->
+    
+    <!-- JavaScript for File -->
+    <script type="text/javascript" src="css-and-js/index.js"></script>
 </body>
 </html>

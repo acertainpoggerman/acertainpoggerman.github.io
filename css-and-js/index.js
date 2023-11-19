@@ -3,6 +3,21 @@ Number.prototype.mod = function(val) {
     return ((this % val) + val) % val;
 }
 
+// Color Name 'Database'
+const colorNames = {
+    "#000000": "black",
+    "#ffffff": "white",
+    "#7f7f7f": "gray",
+    
+    "#ff0000": "red",
+    "#0000ff": "green",
+    "#0000ff": "blue",
+    
+    "#ff00ff": "magenta",
+    "#ffff00": "yellow",
+    "#00ffff": "cyan",
+}
+
 
 // Sidebar for Pages
 const body = document.querySelector("body"),
@@ -16,16 +31,27 @@ function toggleSidebar() {
 }
 
 
+// RGB and HEX Conversions
 
+function rgbToHex(color) {
+    
+    const red = Math.floor(color[0] * 255).toString(16).padStart(2, 0);
+    const green = Math.floor(color[1] * 255).toString(16).padStart(2, 0);
+    const blue = Math.floor(color[2] * 255).toString(16).padStart(2, 0);
+    
+    return `#${red}${green}${blue}`;
+}
 
-
-function hexaToRGB(color) {
+function hexToRGB(color) {
     const red = parseInt(color.substring(1, 3), 16);
     const green = parseInt(color.substring(3, 5), 16);
     const blue = parseInt(color.substring(5, 7), 16);
     
     return [red, green, blue];
 }
+
+
+// RGB and HSL Conversions
 
 function rgbToHSL(color) {
     
@@ -101,7 +127,7 @@ if (body.id === "explore") {
 
 function randomHexColorWithInfluence(colorAsHex, deviationAsInt, colorVariations) {
     const deviation = deviationAsInt / 100;
-    const color = hexaToRGB(colorAsHex);
+    const color = hexToRGB(colorAsHex);
     colorVariations = colorVariations.map(value => value / 100)
     
     const ranges = [
@@ -144,9 +170,34 @@ function generateColorBlocks() {
     
     for (const color of colors) {
         resultSection.innerHTML += `
-        <a href="item.html" style="background-color: ${color}; color: white"><span class="text">${color}</span></a>
+        <div class="color-block" style="background-color: ${color}; color: white">
+            <a href="item.html" >
+                <span class="text">${color}</span>
+            </a>
+            <div class="copy-wrapper" title="Copy Color">
+                <i class='unhov bx bx-copy'></i>
+                <i class='hov bx bxs-copy'></i>
+            </div>
+        </div>
         `;
-    } 
+        
+    }
+    
+    const colorBlocks = resultSection.querySelectorAll("div.color-block");
+    
+    for (colorBlock of colorBlocks) {
+        const color = colorBlock.querySelector("span.text").innerText,
+            copyButton = colorBlock.querySelector("div.copy-wrapper");
+        
+        copyButton.addEventListener("click", () => {
+            navigator.clipboard.writeText(color);
+            alert(`Copied Color: ${color}`)
+        })
+    }
+}
+
+function sayHi() {
+    console.log("Hi");
 }
 
 function removeColorBlocks() {
@@ -171,9 +222,8 @@ function clearColorBlocks() {
 
 function changeColorOfBlock() {
     const color = document.colorselector.colorpicker.value;
-    const displayColor = document.querySelector(" div.color-display");
+    const displayColor = document.querySelector("div.color-display");
     displayColor.style.backgroundColor = `#${color}`;
 }
 
-console.log(rgbToHSL([1, 0, 0]));
-console.log(hslToRGB([0, 1, 0.5]));
+// console.log(rgbToHex([0.45, 0.65657, 1]))
