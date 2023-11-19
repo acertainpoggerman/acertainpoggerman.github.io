@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css-and-js/style.css">
+    <title>HÜ - Explore</title>
+</head>
+<body id="explore">
+    <!-- Sidebar (Start) -->
+    <div class="sidebar">
+        <!-- Sidebar Width Toggler (Start) -->
+        <div class="toggle">
+            <i class='expand-icon bx bxs-chevrons-right' title="Expand Sidebar"></i>
+            <i class='collapse-icon bx bxs-chevrons-left' title="Collapse Sidebar"></i>
+        </div>
+        <!-- Sidebar Width Toggler (End) -->
+        
+        <!-- Sidebar Menu (Start) -->
+        <ul class="menu">
+            <li>
+                <a class="item" href="index.html">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="explore.html">
+                    <i class='bx bx-search-alt'></i>
+                    <span class="name">Explore</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="saved.html">
+                    <i class='bx bx-bookmark'></i>
+                    <span class="name">Saved</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="palette.html">
+                    <i class='bx bx-palette' ></i>
+                    <span class="name">Palette</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="color-theory.html">
+                    <i class='bx bxs-color' ></i>
+                    <span class="name">Color Theory</span>
+                </a>
+            </li>
+            <li>               
+                <a href="login-register.html#login" class="item">
+                    <i class='bx bx-user' ></i>
+                    <span class="name">Login / Register</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Sidebar Menu (End) -->
+    </div>
+    <!-- Sidebar (End) -->
+    
+    <!-- Main Page (Start) -->
+    <div class="main-page">
+        
+        <!-- Color Picker for Adjusting Generation (Start) -->
+        <div class="picker-option">
+            <div id="select-color">
+                <span>#</span>
+                <form action="" name="colorselector">
+                    <input 
+                    type="text" 
+                    id="color-picker" 
+                    name="colorpicker"
+                    value="FFFFFF" 
+                    placeholder="Color (Hex)"
+                    onkeyup="changeColorOfBlock()"
+                    >
+                </form>
+                <div class="color-display"></div>
+            </div>
+            
+            <form action="" name="sliders" id="slider-wrapper">
+                <div>
+                    <label for="deviation">Deviation</label>
+                    <input
+                    type="range"
+                    name="deviation"
+                    id="deviation"
+                    min="1"
+                    max="100"
+                    >
+                    <span class="deviate-val">50%</span>
+                </div>
+
+                <div class="colors">
+                    <div>
+                        <label for="red-variation">Red</label>
+                        <input
+                        type="range"
+                        name="redVariation"
+                        id="red-variation"
+                        min="0"
+                        max="100"
+                        value="100"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="green-variation">Green</label>
+                        <input
+                        type="range"
+                        name="greenVariation"
+                        id="green-variation"
+                        min="0"
+                        max="100"
+                        value="100"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label for="blue-variation">Blue</label>
+                        <input
+                        type="range"
+                        name="blueVariation"
+                        id="blue-variation"
+                        min="0"
+                        max="100"
+                        value="100"
+                        >
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Color Picker for Adjusting Generation (End) -->
+        
+        <!-- <div class="picker-option"></div> -->
+        
+        <div class="result-wrapper">
+            <div class="button-wrapper">
+                <div class="add">
+                    <i class='bx bx-plus' ></i>
+                    <span class="text">Add Row</span>
+                </div>
+                <div class="reset">
+                    <i class='bx bx-reset'></i>
+                    <span class="text">Reset</span>
+                </div>
+                <div class="remove">
+                    <i class='bx bx-minus' ></i>
+                    <span class="text">Remove Row</span>
+                </div>
+            </div>
+            
+            <div class="border">
+                <div class="results"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Page (End) -->
+    
+    <!-- JavaScript for File -->
+    <script type="text/javascript" src="css-and-js/index.js"></script>
+</body>
+</html>

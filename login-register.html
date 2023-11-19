@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.css">
+    <title>HÜ - Login / Register</title>
+</head>
+<body id="log-reg">
+    <div class="header">
+        <h4>HÜ</h4>
+        <div class="links">
+        </div>
+    </div>
+    <div class="main-page">
+        <div class="card-wrapper">
+            <h1 class="card-title">LOGIN</h1>
+            <div class="form-card">
+                <form action="#" name="login">
+                    <!-- <input type="text" name="username" id="#log-username" placeholder="Username"> -->
+                    <input type="text" name="fname" id="#log-fname" placeholder="First Name">
+                    <input type="text" name="lname" id="#log-lname" placeholder="Last Name">
+                    <input type="password" name="password" id="#log-password" placeholder="Password">
+                    <input type="button" value="Login" onclick="printValue()">
+                </form>
+                
+                <script>
+                    function printValue() {
+                        // const username = document.login.username.value;
+                        const firstName = document.login.fname.value;
+                        const lastName = document.login.lname.value;
+                        const password = document.login.password.value;
+                        
+                        if (password != "123456") {
+                            window.alert("Incorrect Password");
+                        } else {
+                            alert(`Welcome ${firstName} ${lastName}`);
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="card-wrapper">
+            <h1 class="card-title">REGISTER</h1>
+            <div class="form-card">
+                <form action="#">
+                    <input type="text" name="username" id="#reg-username" placeholder="Username">
+                    <input type="text" name="email" id="#reg-email" placeholder="E-mail">
+                    <br>
+                    <input type="password" name="password" id="#reg-password" placeholder="Password">
+                    <input type="password" name="password" id="#reg-conf-password" placeholder="Confirm Password">
+                    <input type="button" value="Register" onclick="">
+                </form>
+            </div>
+        </div>   
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>
