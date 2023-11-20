@@ -35,9 +35,9 @@ function toggleSidebar() {
 
 function rgbToHex(color) {
     
-    const red = Math.floor(color[0] * 255).toString(16).padStart(2, 0);
-    const green = Math.floor(color[1] * 255).toString(16).padStart(2, 0);
-    const blue = Math.floor(color[2] * 255).toString(16).padStart(2, 0);
+    const red = Math.floor(color[0]).toString(16).padStart(2, 0);
+    const green = Math.floor(color[1]).toString(16).padStart(2, 0);
+    const blue = Math.floor(color[2]).toString(16).padStart(2, 0);
     
     return `#${red}${green}${blue}`;
 }
@@ -92,9 +92,45 @@ function hslToRGB(color) {
     else if (5 <= hueComplement && hueComplement < 6) { [red, green, blue] = [chroma, 0, xValue]; }
     
     match = luminance - chroma / 2;
-    return [red + match, green + match, blue + match];
+    return [Math.floor(red + match), Math.floor(green + match), Math.floor(blue + match)];
 }
 
+
+function complementColorFromHSL(color) {
+    const [hue, saturation, luminance] = color;
+    return [(hue + 180).mod(360), saturation, luminance];
+}
+
+function analogousColorsFromHSL(color, angle) {
+    const [hue, saturation, luminance] = color;
+    
+    return [
+        [(hue - 15).mod(360), saturation, luminance],
+        [hue, saturation, luminance],
+        [(hue + 15).mod(360), saturation, luminance]
+    ];
+}
+
+function colorTriadFromHSL(color) {
+    const [hue, saturation, luminance] = color;
+    
+    return [
+        [hue, saturation, luminance],
+        [(hue + 120).mod(360), saturation, luminance],
+        [(hue + 240).mod(360), saturation, luminance]
+    ];
+}
+
+function colorTetradFromHSL(color) {
+    const [hue, saturation, luminance] = color;
+    
+    return [
+        [hue, saturation, luminance],
+        [(hue + 90).mod(360), saturation, luminance],
+        [(hue + 180).mod(360), saturation, luminance],
+        [(hue + 270).mod(360), saturation, luminance]
+    ];
+}
 
 
 
@@ -120,6 +156,89 @@ if (body.id === "explore") {
         deviationText = document.querySelector("span.deviate-val");
                         
     deviationSlider.addEventListener("input", () => deviationText.innerText = `${deviation.value}%`);
+}
+
+
+if (body.id === "item") {
+    
+    const mainColor = sessionStorage.getItem("currentColor");
+    const mainColorAsHSL = rgbToHSL(hexToRGB(mainColor));
+    const mainPage = body.querySelector("div.main-page");
+    
+    
+    const colorInfoBlock = mainPage.querySelector("div.color-info");
+    colorInfoBlock.querySelector("div.hex").lastChild.data = mainColor;
+    
+    const [redVal, greenVal, blueVal] = hexToRGB(mainColor);
+    colorInfoBlock.querySelector("div.rgb").lastChild.data = `( ${redVal} , ${greenVal} , ${blueVal} )`;
+    
+    const [hueVal, satVal, lumVal] = rgbToHSL(hexToRGB(mainColor).map((color) => color / 255));
+    colorInfoBlock.querySelector("div.hsl").lastChild.data = `( ${hueVal.toFixed(1)}° , ${satVal.toFixed(1)} , ${lumVal.toFixed(1)} )`;
+    
+    
+    const mainColorBlock = mainPage
+        .querySelector("div.main-color")
+        .querySelector("div.color-block");
+        
+    mainColorBlock.style.backgroundColor = mainColor;
+    
+    
+    const complementColorBlock = mainPage
+        .querySelector("div.related-colors")
+        .querySelector("div.color-complement")
+        .querySelector("div.color-block");
+        
+    complementColorBlock.style.backgroundColor = rgbToHex(hslToRGB(complementColorFromHSL(mainColorAsHSL)));
+    console.log(rgbToHex(hslToRGB(complementColorFromHSL(mainColorAsHSL))));
+    
+    
+    
+    const analogousBlock = mainPage.querySelector("div.color-analogous");
+        
+    const analogousColorBlocks = [
+        analogousBlock.querySelector("div.color-block.left"),
+        analogousBlock.querySelector("div.color-block.main"),
+        analogousBlock.querySelector("div.color-block.right"),
+    ];
+    const analogousColors = analogousColorsFromHSL(mainColorAsHSL, 5).map((color) => {
+        return rgbToHex(hslToRGB(color));
+    });
+    analogousColorBlocks.forEach((colorBlock, idx) => {
+        colorBlock.style.backgroundColor = analogousColors[idx];
+    });
+    
+    
+    const triadBlock = mainPage.querySelector("div.color-triad");
+    
+    const colorTriadBlocks = [
+        triadBlock.querySelector("div.color-block.main"),
+        triadBlock.querySelector("div.color-block.angle120"),
+        triadBlock.querySelector("div.color-block.angle240")
+    ];
+    
+    const colorTriad = colorTriadFromHSL(mainColorAsHSL).map((color) => {
+        return rgbToHex(hslToRGB(color));
+    });
+    colorTriadBlocks.forEach((colorBlock, idx) => {
+        colorBlock.style.backgroundColor = colorTriad[idx];
+    });
+    
+    
+    const tetradBlock = mainPage.querySelector("div.color-tetrad");
+    
+    const colorTetradBlocks = [
+        tetradBlock.querySelector("div.color-block.main"),
+        tetradBlock.querySelector("div.color-block.angle90"),
+        tetradBlock.querySelector("div.color-block.angle180"),
+        tetradBlock.querySelector("div.color-block.angle270")
+    ];
+    
+    const colorTetrad = colorTetradFromHSL(mainColorAsHSL).map((color) => {
+        return rgbToHex(hslToRGB(color));
+    });
+    colorTetradBlocks.forEach((colorBlock, idx) => {
+        colorBlock.style.backgroundColor = colorTetrad[idx];
+    });
 }
 
 
@@ -171,7 +290,7 @@ function generateColorBlocks() {
     for (const color of colors) {
         resultSection.innerHTML += `
         <div class="color-block" style="background-color: ${color}; color: white">
-            <a href="javascript:colorInDepth(${color})" >
+            <a href="javascript:colorInDepth('${color}')" >
                 <span class="text">${color}</span>
             </a>
             <div class="copy-wrapper" title="Copy Color">
@@ -185,7 +304,7 @@ function generateColorBlocks() {
     
     const colorBlocks = resultSection.querySelectorAll("div.color-block");
     
-    for (colorBlock of colorBlocks) {
+    for (const colorBlock of colorBlocks) {
         const color = colorBlock.querySelector("span.text").innerText,
             copyButton = colorBlock.querySelector("div.copy-wrapper");
         
@@ -199,7 +318,7 @@ function generateColorBlocks() {
 
 function colorInDepth(color) {
     window.sessionStorage.setItem("currentColor", color);
-    location.assign("https://acertainpoggerman.github.io/item.html");
+    window.location.assign("item.html");
 }
 
 function sayHi() {

@@ -655,6 +655,31 @@ h4 {
     /* background-color: red; */
 }
 
+
+@media only screen and (max-width: 1200px) {
+    #item .main-page {
+        flex-direction: column;
+        row-gap: 36px;
+        padding: 50px 0;
+    }
+    
+    #item .main-page .main-color {
+        flex: 1 0 auto;
+        width: 90%;
+        box-sizing: border-box;
+        max-width: 900px;
+    }
+    
+    #item .main-page .related-colors {
+        flex: 1 0 auto;
+        width: 90%;
+        box-sizing: border-box;
+        max-width: 900px;
+    }
+}
+
+
+
 #item .main-page .main-color {
     flex: 2 0 auto;
     min-height: 400px;
@@ -670,7 +695,7 @@ h4 {
 }
 
 #item .main-page .main-color .color-block {
-    background-color: #0000ff;
+    /* background-color: #0000ff; */
     width: 100%;
     aspect-ratio: 2 / 1;
     border-radius: 16px;
