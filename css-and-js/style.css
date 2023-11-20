@@ -242,111 +242,6 @@ h4 {
 
 
 
-/* ------------ LOGIN / REGISTER (START) -------------------------------------------------------------------------------------------------------------------------------------- */
-
-#log-reg {
-    flex-direction: column;
-    background: #221f33;
-}
-
-#log-reg .header {
-    flex: 0 0 auto;
-    
-    padding: 24px;
-    display: flex;
-    color: white
-    /* background-color: red; */
-}
-
-#log-reg .main-page {
-    flex: 1 1 auto;
-    height: 100%;
-    padding: 4%;
-    
-    display: flex;
-    flex-direction: row;
-    place-items: center;
-    column-gap: 96px;
-}
-
-#log-reg .main-page .card-wrapper {
-    width: 90%;
-    max-width: 1000px;
-    align-items: center;
-}
-
-#log-reg .main-page .card-wrapper .form-card {
-    background-color: #efefef;
-    width: 100%;
-    height: 100%;
-    min-height: 450px;
-    border-radius: 48px;
-    
-    display: grid;
-    place-items: center;
-}
-
-#log-reg .main-page .card-wrapper h1 {
-    color: white;
-    opacity: 60%;
-    font-size: 10vw;
-}
-
-@media only screen and (max-width: 1300px) {
-    #log-reg .main-page {
-        flex-direction: column;
-        row-gap: 48px;
-    }
-    
-    #log-reg .main-page .card-wrapper {
-        width: 70%;
-        max-width: 800px;
-        
-        display: flex;
-        flex-direction: column;
-    }
-    
-    #log-reg .main-page .card-wrapper .form-card {
-        width: 100%;
-        height: 100%;
-        /* min-height: 600px; */
-        border-radius: 48px;
-        
-        display: grid;
-        place-items: center;
-    }
-}
-
-#log-reg form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 16px;
-    width: 100%;
-}
-
-#log-reg form input[type=text],
-#log-reg form input[type=password] {
-    padding: 12px;
-    font-size: 1.05rem;
-    width: 70%;
-    border-radius: 12px;
-    border: none;
-}
-
-#log-reg form input[type=text]:focus,
-#log-reg form input[type=password]:focus {
-    outline: none;
-}
-
-#log-reg form input[type=text]::placeholder,
-#log-reg form input[type=password]::placeholder {
-    color: #b7b7b7;
-}
-
-/* ------------ LOGIN / REGISTER (END) -------------------------------------------------------------------------------------------------------------------------------------- */
-
-
 /* ------------ EXPLORE (START) -------------------------------------------------------------------------------------------------------------------------------------- */
 #explore .main-page {
     flex: 1 0 auto;
@@ -640,6 +535,8 @@ h4 {
 
 /* ------------ EXPLORE (END) -------------------------------------------------------------------------------------------------------------------------------------- */
 
+
+
 /* ------------ COLOR 'ITEM' (START) -------------------------------------------------------------------------------------------------------------------------------------- */
 
 #item .main-page {
@@ -651,8 +548,6 @@ h4 {
     
     padding: 0 100px;
     overflow-y: scroll;
-    
-    /* background-color: red; */
 }
 
 
@@ -695,7 +590,6 @@ h4 {
 }
 
 #item .main-page .main-color .color-block {
-    /* background-color: #0000ff; */
     width: 100%;
     aspect-ratio: 2 / 1;
     border-radius: 16px;
@@ -799,3 +693,130 @@ h4 {
 }
 
 /* ------------ COLOR 'ITEM' (END) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------ LOGIN AND REGISTER (START) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+#log-reg .main-page {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+    
+    display: grid;
+    place-content: center;
+    overflow-y: scroll;
+    
+    padding: 0 100px;
+}
+
+#log-reg .main-page .card-wrapper {
+    flex: 1 1 auto;
+    max-width: 1200px;
+    display: flex;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 4px 12px #e1e5eb;
+    border-radius: 48px;
+    
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    scroll-behavior: smooth;
+}
+
+#log-reg .main-page .card-wrapper .card {
+    flex: 1 0 100%;
+    background-color: white;
+    padding: 60px;
+    /* border-radius: 48px; */
+    box-sizing: border-box;
+    
+    display: flex;
+    column-gap: 36px;
+}
+
+#log-reg .main-page .card-wrapper .card .aesthetic-card {
+    flex: 0 1 50%;
+    background-color: #ff003c;
+    border-radius: 24px;
+    padding: 64px;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#log-reg .main-page .card-wrapper .card .aesthetic-card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    color: white;
+}
+
+#log-reg .main-page .card-wrapper .card .aesthetic-card p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+    color: white;
+}
+
+#log-reg .main-page .card-wrapper .card .aesthetic-card a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    background-color: #dd003a;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+#log-reg .main-page .card-wrapper .card .aesthetic-card a {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    background-color: #dd003a;
+    padding: 20px;
+    border-radius: 12px;
+    
+    transition: all ease 250ms;
+}
+
+#log-reg .main-page .card-wrapper .card .aesthetic-card a:hover {
+    background-color: #ff607a;
+    color: white;
+    
+    transform: translateY(-5%);
+}
+
+#log-reg .main-page .card-wrapper .card form {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    row-gap: 12px;
+}
+
+#log-reg .main-page .card-wrapper .card form input[type=text],
+#log-reg .main-page .card-wrapper .card form input[type=password] {
+    /* width: 100%; */
+    border: none;
+    background-color: #f7f7fb;
+    padding: 16px;
+    border-radius: 16px;
+}
+
+#log-reg .main-page .card-wrapper .card form input[type=button] {
+    background-color: #32323c;
+    color: white;
+    
+    padding: 16px;
+    border-radius: 16px;
+    border: none;
+    font-weight: 700;
+}
+
+
+    
+/* ------------ LOGIN AND REGISTER (END) -------------------------------------------------------------------------------------------------------------------------------------- */

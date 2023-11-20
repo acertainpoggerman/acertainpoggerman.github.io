@@ -19,6 +19,9 @@ const colorNames = {
 }
 
 
+//
+if (localStorage.getItem("users") == null) localStorage.setItem("users", JSON.stringify([]));
+
 // Sidebar for Pages
 const body = document.querySelector("body"),
     sidebar = body.querySelector("div.sidebar"),
@@ -242,6 +245,11 @@ if (body.id === "item") {
 }
 
 
+if (body.id === "log-reg") {
+    
+}
+
+
 
 
 function randomHexColorWithInfluence(colorAsHex, deviationAsInt, colorVariations) {
@@ -310,7 +318,7 @@ function generateColorBlocks() {
         
         copyButton.addEventListener("click", () => {
             navigator.clipboard.writeText(color);
-            alert(`Copied Color: ${color}`)
+            window.alert(`Copied Color: ${color}`)
         })
     }
 }
@@ -352,3 +360,62 @@ function changeColorOfBlock() {
 }
 
 // console.log(rgbToHex([0.45, 0.65657, 1]))
+
+
+function registerUser() {
+    const username = document.registerForm.regUsername.value,
+        password = document.registerForm.regPass.value,
+        confirmPassword = document.registerForm.regConfirmPass.value;  
+    
+    if (password === confirmPassword) {
+        let users = JSON.parse(localStorage.getItem("users"));
+        
+        const usernames = users.map((user) => user.username);
+        if (usernames.includes(username)) {
+            window.alert(`Username: [${username}] already in use`);
+            return;
+        }
+        
+        users.push(
+            {
+                username: username,
+                password: password,
+                savedColors: [],
+                savedPalettes: [],
+            }
+        );
+        
+        localStorage.setItem("users", JSON.stringify(users));
+        window.alert(`Successfully Created Account: ${username}`);
+        
+        document.registerForm.regUsername.value = "";
+        document.registerForm.regPass.value = "";
+        document.registerForm.regConfirmPass.value = "";
+        
+    } else {
+        window.alert("Passwords do not match.")
+    }
+}
+
+
+function loginUser() {
+    const username = document.loginForm.logUsername.value,
+        password = document.loginForm.logPass.value;
+    
+    let users = JSON.parse(localStorage.getItem("users"));
+    
+    for (const user of users) {
+        if (username === user.username) {
+            if (password === user.password) {
+                localStorage.setItem("currentUser", JSON.stringify(user));
+                window.alert(`Successfully logged in as: [${user.username}]`);
+                return;
+            } else {
+                window.alert(`Wrong Password for Account: [${user.username}]`);
+                return;
+            }
+        }
+    }
+    
+    console.log(JSON.parse(localStorage.getItem("currentUser")));
+}

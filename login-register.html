@@ -4,57 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="css-and-js/style.css">
     <title>HÜ - Login / Register</title>
 </head>
 <body id="log-reg">
-    <div class="header">
-        <h4>HÜ</h4>
-        <div class="links">
+    <!-- Sidebar (Start) -->
+    <div class="sidebar">
+        <!-- Sidebar Width Toggler (Start) -->
+        <div class="toggle">
+            <i class='expand-icon bx bxs-chevrons-right' title="Expand Sidebar"></i>
+            <i class='collapse-icon bx bxs-chevrons-left' title="Collapse Sidebar"></i>
         </div>
+        <!-- Sidebar Width Toggler (End) -->
+        
+        <!-- Sidebar Menu (Start) -->
+        <ul class="menu">
+            <li>
+                <a class="item" href="index.html">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="explore.html">
+                    <i class='bx bx-search-alt'></i>
+                    <span class="name">Explore</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="saved.html">
+                    <i class='bx bx-bookmark'></i>
+                    <span class="name">Saved</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="palette">
+                    <i class='bx bx-palette' ></i>
+                    <span class="name">Palette</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="color-theory.html">
+                    <i class='bx bxs-color' ></i>
+                    <span class="name">Color Theory</span>
+                </a>
+            </li>
+            <li>               
+                <a href="login-register.html" class="item">
+                    <i class='bx bx-user' ></i>
+                    <span class="name">Login / Register</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Sidebar Menu (End) -->
     </div>
+    <!-- Sidebar (End) -->
+    
+    <!-- Main Page (Start) -->
     <div class="main-page">
         <div class="card-wrapper">
-            <h1 class="card-title">LOGIN</h1>
-            <div class="form-card">
-                <form action="#" name="login">
-                    <!-- <input type="text" name="username" id="#log-username" placeholder="Username"> -->
-                    <input type="text" name="fname" id="#log-fname" placeholder="First Name">
-                    <input type="text" name="lname" id="#log-lname" placeholder="Last Name">
-                    <input type="password" name="password" id="#log-password" placeholder="Password">
-                    <input type="button" value="Login" onclick="printValue()">
+            <div class="card" id="login-card">
+                <div class="aesthetic-card">
+                    <h2>HÜ - Login</h2>
+                    <p>The World of Colour awaits you. <br>Dont have an account yet?</p>
+                    <a href="#register-card">Go to Register Page</a>
+                </div>
+            
+                <form action="" name="loginForm">
+                    <input id="log-username" name="logUsername" type="text" placeholder="Username">
+                    <input id="log-pass" name="logPass" type="password" placeholder="Password">
+                    <input type="button" value="Login" onclick="loginUser()">
                 </form>
-                
-                <script>
-                    function printValue() {
-                        // const username = document.login.username.value;
-                        const firstName = document.login.fname.value;
-                        const lastName = document.login.lname.value;
-                        const password = document.login.password.value;
-                        
-                        if (password != "123456") {
-                            window.alert("Incorrect Password");
-                        } else {
-                            alert(`Welcome ${firstName} ${lastName}`);
-                        }
-                    }
-                </script>
+            </div>
+            <div class="card" id="register-card">
+                <div class="aesthetic-card">
+                    <h2>HÜ - Register</h2>
+                    <p>It's about time you take your first leap into the Spectrum. <br>Already have an account?</p>
+                    <a href="#login-card">Got to Login Page</a>
+                </div>
+            
+                <form action="" name="registerForm">
+                    <input id="reg-username" name="regUsername" type="text" placeholder="Username">
+            
+                    <input id="reg-pass" name="regPass" type="password" placeholder="Password">
+                    <input id="reg-conf-pass" name="regConfirmPass" type="password" placeholder="Confirm Password">
+                    <input type="button" value="Register" onclick="registerUser()">
+                </form>
             </div>
         </div>
-        <div class="card-wrapper">
-            <h1 class="card-title">REGISTER</h1>
-            <div class="form-card">
-                <form action="#">
-                    <input type="text" name="username" id="#reg-username" placeholder="Username">
-                    <input type="text" name="email" id="#reg-email" placeholder="E-mail">
-                    <br>
-                    <input type="password" name="password" id="#reg-password" placeholder="Password">
-                    <input type="password" name="password" id="#reg-conf-password" placeholder="Confirm Password">
-                    <input type="button" value="Register" onclick="">
-                </form>
-            </div>
-        </div>   
     </div>
-    <script src="../index.js"></script>
+    <!-- Main Page (End) -->
+    
+    <!-- JavaScript for File -->
+    <script src="css-and-js/index.js"></script>
 </body>
 </html>
