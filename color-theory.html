@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css-and-js/style.css">
+    <title>HÜ - Color Theory</title>
+</head>
+<body id="color-theory">
+    <!-- Sidebar (Start) -->
+    <div class="sidebar">
+        <!-- Sidebar Width Toggler (Start) -->
+        <div class="toggle">
+            <i class='expand-icon bx bxs-chevrons-right' title="Expand Sidebar"></i>
+            <i class='collapse-icon bx bxs-chevrons-left' title="Collapse Sidebar"></i>
+        </div>
+        <!-- Sidebar Width Toggler (End) -->
+        
+        <!-- Sidebar Menu (Start) -->
+        <ul class="menu">
+            <li>
+                <a class="item" href="index.html">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="explore.html">
+                    <i class='bx bx-search-alt'></i>
+                    <span class="name">Explore</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="saved.html">
+                    <i class='bx bx-bookmark'></i>
+                    <span class="name">Saved</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="palette.html">
+                    <i class='bx bx-palette' ></i>
+                    <span class="name">Palette</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="color-theory.html">
+                    <i class='bx bxs-color' ></i>
+                    <span class="name">Color Theory</span>
+                </a>
+            </li>
+            <li>               
+                <a href="login-register.html#login-card" class="item">
+                    <i class='bx bx-user' ></i>
+                    <span class="name">Login / Register</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Sidebar Menu (End) -->
+    </div>
+    <!-- Sidebar (End) -->
+    
+    <!-- Main Page (Start) -->
+    <div class="main-page">
+        <div class="intro">
+            <div class="title-card">
+                <h2>Color Theory</h2>
+                <div class="image"></div>
+            </div>
+            <p>
+                Color may be beautiful, but it's also very hard to understand. The way light sees color isn't the way pigments see color.
+                There are many problems that come with converting the color on a screen to the color on a printed page. 
+                <br><br>
+                Finding the
+                right colors that fit together is another problem on its own, and being able to create consistent themes is a big
+                hassle. But that's the beauty of it: <b>Its Complexity</b>.
+            </p>
+        </div>
+        
+        <div class="rep">
+            <div class="info">
+                <div class="title-card">
+                    <h3>Color Representation</h3>
+                </div>
+                <p>
+                    Let's first start with how we represent color. There are many ways to represent color, and
+                    with each representation system comes its advantages and disadvantages. Part of finding the
+                    right colors is finding the right color representation for the job.
+                </p>
+            </div>
+            
+            <div class="col-slider-wrapper">
+                <div class="col-slider">
+                    <div class="card" id="ryb">RYB</div>
+                    <div class="card" id="rgb">RGB</div>
+                    <div class="card" id="hsl">HSL</div>
+                    <div class="card" id="cmyk">CMYK</div>
+                </div>
+                <div class="col-slider-nav">
+                    <a href="#ryb">RYB</a>
+                    <a href="#rgb">RGB</a>
+                    <a href="#hsl">HSL</a>
+                    <a href="#cmyk">CMYK</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-manip">
+            <div class="title-card">
+                <h3>Color Manipulation</h3>
+            </div>
+            <p>
+                There are 3 main ways colors tend to interact with neutral colors. These
+                mainpulation processes give rise to 3 sets for colors: <b>Shades</b>, <b>Tints</b>
+                and <b>Tones</b>. Color sets using any of these 2 interactions are known as
+                <b>Monochrome Colors</b>.
+            </p>
+            
+            <div class="section-wrapper">
+                <div class="shade section">
+                    <img src="images/shade_example.jpg" alt="Shade Gradient">
+                    <div class="info">
+                        <h4>Shades</h4>
+                        <p>
+                            Shades are defined by sucessfully adding black to a color
+                            Shades are very good at showing emphasis and tend to stand
+                            out more.
+                        </p>
+                    </div>
+                </div>
+                <div class="tint section">
+                    <img src="images/tint_example.jpg" alt="Tint Gradient">
+                    <div class="info">
+                        <h4>Tints</h4>
+                        <p>
+                            Tints are defined by sucessfully adding white to a color
+                            Tints give an illusion of brightness, which is very useful in showing
+                            shine.
+                        </p>
+                    </div>
+                </div>
+                <div class="tone section">
+                    <img src="images/tone_example.jpg" alt="tone Gradient">
+                    <div class="info">
+                        <h4>Tones</h4>
+                        <p>
+                            Shades are defined by sucessfully adding truely neutral gray
+                            to a color. Tones gives a sense of atmosphere and realism.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-sets">
+            <div class="title-card">
+                <h3>Color Sets</h3>
+            </div>
+            <p>
+                The Color Wheel is a very interesting structure. It shows relationships between
+                colors we don't even realize just by looking at them plainly. Color sets are
+                the product of these relationship. The main ones are: <b>Complementaries</b>,
+                <b>Analogous</b>, <b>Triads</b> and <b>Tetrads</b>
+            </p>
+        </div>
+        
+    </div>
+    <!-- Main Page (End) -->
+    
+    <!-- JavaScript for File -->
+    <script src="css-and-js/index.js"></script>
+</body>
+</html>

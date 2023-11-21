@@ -700,6 +700,7 @@ h4 {
 
 #log-reg .main-page {
     flex: 1 0 auto;
+    height: 100%;
     box-sizing: border-box;
     
     display: flex;
@@ -852,3 +853,210 @@ h4 {
 
     
 /* ------------ LOGIN AND REGISTER (END) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ------------ COLOR THEORY (START) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+#color-theory .main-page {
+    flex: 1 1 auto;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px 0;
+    
+    padding: 40px;
+    margin: auto;
+    
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+#color-theory p {
+    font-size: 1.1rem;
+    color: #7f7f7f;
+    line-height: 115%;
+}
+
+#color-theory h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+#color-theory .main-page .intro {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#color-theory .main-page .intro .title-card {
+    background-color: #32323c;
+    color: white;
+    border-radius: 32px;
+    position: relative;
+    
+    min-height: 300px;
+}
+
+#color-theory .main-page .intro .title-card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    white-space: nowrap;
+}
+
+#color-theory .main-page .rep {
+    max-width: 1200px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    border-radius: 40px;
+}
+
+#color-theory .main-page .rep .info {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px 40px 0 0;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+#color-theory  h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+#color-theory .main-page .rep .col-slider-wrapper {
+    position: relative;
+}
+
+#color-theory .main-page .rep .col-slider-wrapper .col-slider {
+    height: 400px;
+    background-color: white;
+    display: flex;
+    
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+#color-theory .main-page .rep .col-slider-wrapper .col-slider .card {
+    flex: 1 0 100%;
+    background-color: white;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
+}
+
+#color-theory .main-page .rep .col-slider-nav {
+    display: flex;
+    margin: auto;
+}
+
+#color-theory .main-page .rep .col-slider-nav a {
+    background-color: white;
+    color: #7f7f7f;
+    flex: 1 0 auto;
+    
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    min-height: 64px;
+}
+
+#color-theory .main-page .rep .col-slider-nav a:hover {
+    background-color: #32323c;
+    color: white;
+}
+
+#color-theory .main-page .rep .col-slider-nav a:first-child {
+    border-radius: 0 0 0 40px;
+}
+
+#color-theory .main-page .rep .col-slider-nav a:last-child {
+    border-radius: 0 0 40px 0;
+}
+
+
+#color-theory .main-page .color-manip {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#color-theory .main-page .color-manip .section-wrapper {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+#color-theory .main-page .color-manip .section {
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1100px) {
+    #color-theory .main-page .color-manip .section {
+        flex-direction: column;
+        align-items: start;
+        row-gap: 16px;
+    }
+    
+    #color-theory .main-page .color-manip .section img {
+        min-width: 80%;
+    }    
+}
+    
+#color-theory .main-page .color-manip .section img {
+    border-radius: 20px;
+    width: 50%;
+}
+
+
+
+#color-theory .main-page .color-sets {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* ------------ COLOR THEORY (END) -------------------------------------------------------------------------------------------------------------------------------------- */
