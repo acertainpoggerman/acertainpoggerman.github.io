@@ -20,14 +20,26 @@ const colorNames = {
 
 
 //
-if (localStorage.getItem("users") == null) localStorage.setItem("users", JSON.stringify([]));
+if (localStorage.getItem("users") == null) {
+    localStorage.setItem("users", JSON.stringify([]));
+    console.log("Hi")
+}
+
+
 
 // Sidebar for Pages
 const body = document.querySelector("body"),
     sidebar = body.querySelector("div.sidebar"),
     sidebarToggle = sidebar.querySelector("div.toggle");
+    sidebarProfileText = sidebar.querySelector("a.profile")
+        .querySelector("span.name");
 
 sidebarToggle.addEventListener("click", toggleSidebar);
+
+if (localStorage.getItem("currentUser") == null) {
+    sidebarProfileText.innerText = "acertainnemesis";
+}
+
 
 function toggleSidebar() {
     sidebar.classList.toggle("opened");

@@ -97,6 +97,9 @@ h4 {
     width: calc(100% - 24px);
     margin: 0 auto;
     list-style-type: none;
+    
+    height: calc(100% - 100px);
+    position: relative;
 }
 
 .sidebar .menu .item {
@@ -137,6 +140,16 @@ h4 {
     width: 0;
 }
 
+.sidebar .menu .profile {
+    position: absolute;
+    bottom: 10px;
+}
+
+.sidebar .menu .profile:hover {
+    background-color: #32323c;
+    color: white
+}
+
 /* SIDEBAR (End) */
 
 /* ------------ HOME (START) -------------------------------------------------------------------------------------------------------------------------------------- */
@@ -159,22 +172,61 @@ h4 {
 #home .main-page #intro {
     flex: 1 0 700px;
     width: 100%;
-    border-radius: 0 0 64px 64px;
-    background-color: #ff003c;
     
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     position: relative;
     
     color: white;
     scroll-snap-align: start;
+    
+    overflow: hidden;
+    border-radius: 0 0 64px 64px;
+    box-shadow: 0 4px 12px #e1e5eb;
 }
+
+#home .main-page #intro img {
+    width: 1850px;
+    height: 700px;
+    min-width: 1000px;
+    
+    object-fit: cover;
+    object-position: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    transition: filter ease-in-out 500ms;
+}
+
+#home .main-page #intro .title-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: -10px;
+    
+    transform-origin: 50% 50%;
+}
+
+#home .main-page #intro .title-text h1 {
+    transition: all ease-in-out 500ms;
+}
+
+#home .main-page #intro:hover .title-text h1 {
+    transform: scale(110%);
+}
+
 
 #home .main-page #intro a {
     position: absolute;
+    left: 50%;
     bottom: 16px;
+    transform: translateX(-50%);
     text-decoration: none;
     color: white;
 }
@@ -200,6 +252,7 @@ h4 {
     gap: 0 12px;
     align-content: center;
     grid-template-columns: 50% 50% 50%;
+    box-shadow: 0 8px 8px #e1e5eb77;
 }
 
 .text {
@@ -217,7 +270,7 @@ h4 {
 #home .main-page #p1:hover,
 #home .main-page #p2:hover,
 #home .main-page #p3:hover {
-    box-shadow: 0 8px 8px #e1e5eb77;
+    box-shadow: 0 4px 12px #e1e5eb;
 }
 
 #home .main-page #p1 {
@@ -244,7 +297,7 @@ h4 {
 
 /* ------------ EXPLORE (START) -------------------------------------------------------------------------------------------------------------------------------------- */
 #explore .main-page {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     
     display: flex;
     row-gap: 36px;
@@ -253,6 +306,65 @@ h4 {
     
     padding: 50px 0;
     overflow-y: scroll;
+}
+
+#explore .main-page .intro {
+    width: 90%;
+    flex: 0 1;
+    max-width: 1200px;
+    
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    box-sizing: border-box;
+}
+
+#explore p {
+    color: #7a7c91;
+    font-size: 1.1rem;
+}
+
+#color-theory h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+
+#explore .main-page .intro .title-card {
+    color: white;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+}
+
+#explore .main-page .intro .title-card img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#explore .main-page .intro .title-card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
 }
 
 #explore .main-page .picker-option {
@@ -699,7 +811,7 @@ h4 {
 /* ------------ LOGIN AND REGISTER (START) -------------------------------------------------------------------------------------------------------------------------------------- */
 
 #log-reg .main-page {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     height: 100%;
     box-sizing: border-box;
     
@@ -751,7 +863,6 @@ h4 {
 }
 
 #log-reg .main-page .card-wrapper .card .aesthetic-card h2 {
-    /* display: inline-block; */
     font-family: 'Nunito', sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
@@ -822,7 +933,7 @@ h4 {
 }
 
 #log-reg .main-page .card-wrapper .card form {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -833,7 +944,6 @@ h4 {
 
 #log-reg .main-page .card-wrapper .card form input[type=text],
 #log-reg .main-page .card-wrapper .card form input[type=password] {
-    /* width: 100%; */
     border: none;
     background-color: #f7f7fb;
     padding: 16px;
@@ -899,12 +1009,22 @@ h4 {
 }
 
 #color-theory .main-page .intro .title-card {
-    background-color: #32323c;
     color: white;
     border-radius: 32px;
     position: relative;
-    
-    min-height: 300px;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+}
+
+#color-theory .main-page .intro .title-card img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* filter: contrast(150%); */
 }
 
 #color-theory .main-page .intro .title-card h2 {
@@ -917,6 +1037,7 @@ h4 {
     font-weight: 800;
     font-size: 4rem;
     white-space: nowrap;
+    z-index: 3;
 }
 
 #color-theory .main-page .rep {
@@ -953,7 +1074,7 @@ h4 {
     
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory y mandatory;
 }
 
 #color-theory .main-page .rep .col-slider-wrapper .col-slider .card {
