@@ -22,7 +22,7 @@ const colorNames = {
 //
 if (localStorage.getItem("users") == null) {
     localStorage.setItem("users", JSON.stringify([]));
-    console.log("Hi")
+    console.log("Hi");
 }
 
 
@@ -39,6 +39,7 @@ sidebarToggle.addEventListener("click", toggleSidebar);
 if (localStorage.getItem("currentUser") == null) {
     sidebarProfileText.innerText = "Login / Register";
 } else {
+    // TODO: Make Available for Actual Website
     sidebarProfileText.innerText = JSON.parse(localStorage.getItem("currentUser")).username;
 }
 
@@ -263,6 +264,23 @@ if (body.id === "log-reg") {
     
 }
 
+// TODO: Change for Actual Website
+
+if (body.id === "profile") {
+    const mainPage = body.querySelector("div.main-page");
+    
+    const profileUsername = mainPage.querySelector("span.name"),
+        profileColorCount = mainPage.querySelector("span.name");
+        
+    const savedColors = JSON.parse(localStorage.getItem("currentUser")).savedColors;
+    const username = JSON.parse(localStorage.getItem("currentUser")).username;
+        
+    profileUsername.innerText = username;
+    profileColorCount.innerText = savedColors.length === 1
+     ? `${savedColors.length} Saved Color`
+     : `${savedColors.length} Saved Colors`;
+}
+
 
 
 
@@ -395,7 +413,6 @@ function registerUser() {
                 username: username,
                 password: password,
                 savedColors: [],
-                savedPalettes: [],
             }
         );
         
@@ -407,7 +424,7 @@ function registerUser() {
         document.registerForm.regConfirmPass.value = "";
         
     } else {
-        window.alert("Passwords do not match.")
+        window.alert("Passwords do not match.");
     }
 }
 
@@ -437,8 +454,16 @@ function loginUser() {
 
 
 
-function naviagateProfile() {
-    if (localStorage.getItem("currentUser") != null) {
-        window.location.assign("login-register.html#login");
-    }
+function navigateProfile() {
+    // if (localStorage.getItem("currentUser") == null) {
+    //     window.location.assign("login-register.html#login");
+    // } else {
+    //     window.location.asign("profile.html");
+    // }
+    window.location.assign("profile.html");
+}
+
+function logoutUser() {
+    localStorage.setItem("currentUser", null);
+    window.location.assign("login-register.html#login");
 }

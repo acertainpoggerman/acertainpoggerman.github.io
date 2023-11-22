@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css-and-js/style.css">
+    <title>HU - Profile ()</title>
+</head>
+<body id="profile">
+    <!-- Sidebar (Start) -->
+    <div class="sidebar">
+        <!-- Sidebar Width Toggler (Start) -->
+        <div class="toggle">
+            <i class='expand-icon bx bxs-chevrons-right' title="Expand Sidebar"></i>
+            <i class='collapse-icon bx bxs-chevrons-left' title="Collapse Sidebar"></i>
+        </div>
+        <!-- Sidebar Width Toggler (End) -->
+        
+        <!-- Sidebar Menu (Start) -->
+        <ul class="menu">
+            <li>
+                <a class="item" href="index.html">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="explore.html">
+                    <i class='bx bx-search-alt'></i>
+                    <span class="name">Explore</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="color-theory.html">
+                    <i class='bx bxs-color' ></i>
+                    <span class="name">Color Theory</span>
+                </a>
+            </li>
+            <li>
+                <a class="item" href="roadmap.html">
+                    <i class='bx bx-carousel'></i>
+                    <span class="name">Roadmap</span>
+                </a>
+            </li>
+            
+            
+            <!-- Profile Logo (Start) -->
+            <li>
+                <a href="javascript:navigateProfile()" class="item profile">
+                    <i class='bx bx-user' ></i>
+                    <span class="name">Login / Register</span>
+                </a>
+            </li>
+            <!-- Profile Logo (End) -->
+        </ul>
+
+        <!-- Sidebar Menu (End) -->
+    </div>
+    <!-- Sidebar (End) -->
+    
+    <!-- Main Page (Start) -->
+    <div class="main-page">
+        <div class="profile-card">
+            <div class="pfp">
+                <i class='bx bx-user' ></i>
+            </div>
+            
+            <div class="info">
+                <span class="name"><h2>acertainnemesis</h2></span>
+                <span class="color-count">10 Saved Colors</span>
+            </div>
+            
+            <a href="javascript:logoutUser()">
+                <i class='bx bx-log-in' ></i> Logout
+            </a>
+        </div>
+        
+        <!-- Saved Colors Table (Start) -->
+        <div class="color-header">
+            <h3>Saved Colors</h3>
+        </div>
+        
+        <table class="saved-colors">
+            <tr>
+                <th>Color</th>
+                <th>Hex</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="color-block"></div>
+                </td>
+                <td>#ac88be</td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="color-block"></div>
+                </td>
+                <td>#ac88be</td>
+            </tr>
+        </table>
+        <!-- Saved Colors Table (End) -->
+    </div>
+    <!-- Main Page (End) -->
+    
+    
+    <!-- JavaScript for File -->
+    <script type="text/javascript" src="css-and-js/index.js"></script>
+</body>
+</html>

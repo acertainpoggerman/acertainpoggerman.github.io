@@ -1181,3 +1181,149 @@ h4 {
 }
 
 /* ------------ COLOR THEORY (END) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* ------------ PROFILE (START) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+#profile .main-page {
+    flex: 1 1 auto;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px 0;
+    
+    padding: 40px;
+    margin: auto;
+    
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+#profile .main-page .profile-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    row-gap: 20px;
+    max-width: 1200px;
+    min-width: 600px;
+    box-sizing: border-box;
+}
+
+#profile .main-page .profile-card .pfp {
+    margin: auto;
+    width: 200px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    
+    background-color: black;
+    color: white;
+    font-size: 96px;
+    
+    display: grid;
+    place-items: center;
+}
+
+#profile .main-page .profile-card .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile h2 {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+#profile h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25rem;
+    color: #4e4e5a;
+}
+
+#profile .main-page .profile-card a {
+    text-decoration: none;
+    padding: 20px 80px;
+    
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-weight: 600;
+    border-radius: 20px;
+    
+    background-color: #32323c;
+    color: white;
+    transition: all ease 250ms;
+}
+
+#profile .main-page .profile-card a:hover {
+    background-color: #9797aa;
+    transform: translateY(-5%);
+    color: white;
+}
+
+#profile .main-page .profile-card a i {
+    font-size: 28px;
+}
+
+
+
+#profile .main-page .color-header {
+    background-color: white;
+    padding: 30px;
+    border-radius: 16px 16px 4px 4px;
+    box-shadow: 0 -4px 12px #e1e5eb77;
+    
+    row-gap: 20px;
+    width: 70%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#profile .saved-colors {
+    background-color: white;
+    padding: 30px;
+    border-radius: 4px 4px 16px 16px;
+    box-shadow: 0 4px 12px #e1e5eb77;
+    
+    row-gap: 20px;
+    width: 70%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    margin: -36px;
+}
+
+#profile .saved-colors tr th {
+    height: 40px;
+}
+#profile .saved-colors tr td {
+    height: 80px;
+}
+
+#profile .saved-colors tr th {
+    text-align: start;
+    border-collapse: collapse;
+    border-bottom: 1px solid #dadae4;
+}
+
+#profile .saved-colors tr th:nth-child(2),
+#profile .saved-colors tr td:nth-child(2) {
+    width: 200px;
+}
+
+#profile .saved-colors .color-block {
+    background-color: black;
+    border-radius: 20px;
+    width: calc(100% - 40px);
+    height: 70%;
+}
+
+/* ------------ PROFILE (END) -------------------------------------------------------------------------------------------------------------------------------------- */
