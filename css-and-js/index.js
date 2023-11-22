@@ -36,11 +36,11 @@ const body = document.querySelector("body"),
 
 sidebarToggle.addEventListener("click", toggleSidebar);
 
-if (localStorage.getItem("currentUser") == null) {
+if (JSON.parse(localStorage.getItem("currentUser")) == null) {
     sidebarProfileText.innerText = "Login / Register";
 } else {
     // TODO: Make Available for Actual Website
-    sidebarProfileText.innerText = JSON.parse(localStorage.getItem("currentUser")).username;
+    // sidebarProfileText.innerText = JSON.parse(localStorage.getItem("currentUser")).username;
 }
 
 
@@ -257,7 +257,31 @@ if (body.id === "item") {
     colorTetradBlocks.forEach((colorBlock, idx) => {
         colorBlock.style.backgroundColor = colorTetrad[idx];
     });
+    
+    
+    
+    const copyButton = mainColorBlock.querySelector("div.copy-wrapper");
+    copyButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(mainColor);
+        window.alert(`Copied Color: ${mainColor}`);
+    });
+    
+    const saveButton = mainColorBlock.querySelector("div.save-wrapper");
+    saveButton.addEventListener("click", () => {
+        console.log("Hi");
+        
+        if (JSON.parse(localStorage.getItem("currentUser")) != null) {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            
+            if (!currentUser.savedColors.includes(mainColor)) {
+                savedColors.push(mainColor);
+            }
+        } else {
+            window.location.assign("login-register.html#login");
+        }
+    })
 }
+
 
 
 if (body.id === "log-reg") {
@@ -411,7 +435,6 @@ function changeColorOfBlock() {
     displayColor.style.backgroundColor = `#${color}`;
 }
 
-// console.log(rgbToHex([0.45, 0.65657, 1]))
 
 
 function registerUser() {
