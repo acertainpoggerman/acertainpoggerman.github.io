@@ -274,7 +274,7 @@ if (body.id === "item") {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
             
             if (!currentUser.savedColors.includes(mainColor)) {
-                savedColors.push(mainColor);
+                currentUser.savedColors.push(mainColor);
             }
             window.alert(`Saved Color: ${mainColor}`)
         } else {
