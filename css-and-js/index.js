@@ -272,10 +272,19 @@ if (body.id === "item") {
         
         if (JSON.parse(localStorage.getItem("currentUser")) != null) {
             const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const users = JSON.parse(localStorage.getItem("users"));
             
             if (!currentUser.savedColors.includes(mainColor)) {
                 currentUser.savedColors.push(mainColor);
                 localStorage.setItem("currentUser", JSON.stringify(currentUser));
+                
+                for (let i = 0; i < users.length; i++) {
+                    if (currentUser.username === users[i].username) {
+                        users[i] = currentUser;
+                        break;
+                    }
+                }
+                localStorage.setItem("users", JSON.stringify(users));
             }
             window.alert(`Saved Color: ${mainColor}`)
         } else {
