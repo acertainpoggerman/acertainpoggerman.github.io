@@ -275,6 +275,7 @@ if (body.id === "item") {
             
             if (!currentUser.savedColors.includes(mainColor)) {
                 currentUser.savedColors.push(mainColor);
+                localStorage.setItem("currentUser", JSON.stringify(currentUser));
             }
             window.alert(`Saved Color: ${mainColor}`)
         } else {
