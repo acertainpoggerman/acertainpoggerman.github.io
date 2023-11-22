@@ -185,8 +185,7 @@ h4 {
 }
 
 #home .main-page #intro img {
-    width: 1850px;
-    height: 700px;
+    width: 100%;
     min-width: 1000px;
     
     object-fit: cover;
