@@ -276,7 +276,7 @@ if (body.id === "profile") {
     const savedColors = JSON.parse(localStorage.getItem("currentUser")).savedColors;
     const username = JSON.parse(localStorage.getItem("currentUser")).username;
         
-    profileUsername.innerHTML = `<h2>${username}</h2>`;
+    profileUsername.innerHTML = `<h2>${username}</h2> `;
     profileColorCount.innerText = savedColors.length === 1
      ? `${savedColors.length} Saved Color`
      : `${savedColors.length} Saved Colors`;
