@@ -37,7 +37,9 @@ const body = document.querySelector("body"),
 sidebarToggle.addEventListener("click", toggleSidebar);
 
 if (localStorage.getItem("currentUser") == null) {
-    sidebarProfileText.innerText = "acertainnemesis";
+    sidebarProfileText.innerText = "Login / Register";
+} else {
+    sidebarProfileText.innerText = localStorage.getItem("currentUser");
 }
 
 
