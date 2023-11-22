@@ -501,7 +501,7 @@ function loginUser() {
 function navigateProfile() {
     // TODO: Change for Final Website
     
-    if (localStorage.getItem("currentUser") == null) {
+    if (JSON.parse(localStorage.getItem("currentUser")) == null) {
         window.location.assign("login-register.html#login");
     } else {
         window.location.asign("profile.html");
