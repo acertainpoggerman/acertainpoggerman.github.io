@@ -39,7 +39,7 @@ sidebarToggle.addEventListener("click", toggleSidebar);
 if (localStorage.getItem("currentUser") == null) {
     sidebarProfileText.innerText = "Login / Register";
 } else {
-    sidebarProfileText.innerText = localStorage.getItem("currentUser").username;
+    sidebarProfileText.innerText = JSON.parse(localStorage.getItem("currentUser")).username;
 }
 
 
@@ -432,4 +432,13 @@ function loginUser() {
     }
     
     console.log(JSON.parse(localStorage.getItem("currentUser")));
+}
+
+
+
+
+function naviagateProfile() {
+    if (localStorage.getItem("currentUser") != null) {
+        window.location.assign("login-register.html#login");
+    }
 }
