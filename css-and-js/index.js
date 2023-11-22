@@ -39,7 +39,7 @@ sidebarToggle.addEventListener("click", toggleSidebar);
 if (localStorage.getItem("currentUser") == null) {
     sidebarProfileText.innerText = "Login / Register";
 } else {
-    sidebarProfileText.innerText = localStorage.getItem("currentUser");
+    sidebarProfileText.innerText = localStorage.getItem("currentUser").username;
 }
 
 
