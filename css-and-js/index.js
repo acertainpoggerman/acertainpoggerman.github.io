@@ -264,7 +264,7 @@ if (body.id === "log-reg") {
     
 }
 
-// TODO: Change for Actual Website
+// TODO: Change for Actual Website (How to know: localStorage)
 
 if (body.id === "profile") {
     const mainPage = body.querySelector("div.main-page");
@@ -276,12 +276,27 @@ if (body.id === "profile") {
     const savedColors = JSON.parse(localStorage.getItem("currentUser")).savedColors;
     const username = JSON.parse(localStorage.getItem("currentUser")).username;
         
-    profileUsername.innerText = `<h2>${username}</h2>`;
+    profileUsername.innerHTML = `<h2>${username}</h2>`;
     profileColorCount.innerText = savedColors.length === 1
      ? `${savedColors.length} Saved Color`
      : `${savedColors.length} Saved Colors`;
-     
     
+    savedColorsTable.innerHTML = `
+        <tr>
+            <th>Color</th>
+            <th>Hex</th>
+        </tr>
+    `;
+    for (const color of savedColors) {
+        savedColorsTable.innerHTML += `
+        <tr>
+            <td>
+                <div class="color-block" style="background-color: ${color}"></div>
+            </td>
+            <td>${color}</td>
+        </tr>
+        `
+    }
 }
 
 
@@ -458,6 +473,8 @@ function loginUser() {
 
 
 function navigateProfile() {
+    // TODO: Change for Final Website
+    
     // if (localStorage.getItem("currentUser") == null) {
     //     window.location.assign("login-register.html#login");
     // } else {
