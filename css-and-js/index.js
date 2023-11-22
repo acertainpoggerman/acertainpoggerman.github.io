@@ -40,7 +40,7 @@ if (JSON.parse(localStorage.getItem("currentUser")) == null) {
     sidebarProfileText.innerText = "Login / Register";
 } else {
     // TODO: Make Available for Actual Website
-    // sidebarProfileText.innerText = JSON.parse(localStorage.getItem("currentUser")).username;
+    sidebarProfileText.innerText = JSON.parse(localStorage.getItem("currentUser")).username;
 }
 
 
@@ -276,6 +276,7 @@ if (body.id === "item") {
             if (!currentUser.savedColors.includes(mainColor)) {
                 savedColors.push(mainColor);
             }
+            window.alert(`Saved Color: ${mainColor}`)
         } else {
             window.location.assign("login-register.html#login");
         }
@@ -500,12 +501,12 @@ function loginUser() {
 function navigateProfile() {
     // TODO: Change for Final Website
     
-    // if (localStorage.getItem("currentUser") == null) {
-    //     window.location.assign("login-register.html#login");
-    // } else {
-    //     window.location.asign("profile.html");
-    // }
-    window.location.assign("profile.html");
+    if (localStorage.getItem("currentUser") == null) {
+        window.location.assign("login-register.html#login");
+    } else {
+        window.location.asign("profile.html");
+    }
+    // window.location.assign("profile.html");
 }
 
 function logoutUser() {
