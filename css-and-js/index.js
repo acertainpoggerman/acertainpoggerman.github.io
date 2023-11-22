@@ -270,8 +270,9 @@ if (body.id === "profile") {
     const mainPage = body.querySelector("div.main-page");
     
     const profileUsername = mainPage.querySelector("span.name"),
-        profileColorCount = mainPage.querySelector("span.name");
-        
+        profileColorCount = mainPage.querySelector("span.color-count"),
+        savedColorsTable = mainPage.querySelector("table.saved-colors");
+
     const savedColors = JSON.parse(localStorage.getItem("currentUser")).savedColors;
     const username = JSON.parse(localStorage.getItem("currentUser")).username;
         
@@ -279,6 +280,8 @@ if (body.id === "profile") {
     profileColorCount.innerText = savedColors.length === 1
      ? `${savedColors.length} Saved Color`
      : `${savedColors.length} Saved Colors`;
+     
+    
 }
 
 
