@@ -268,14 +268,16 @@ if (body.id === "log-reg") {
 
 if (body.id === "profile") {
     const mainPage = body.querySelector("div.main-page");
+    const title = document.querySelector("title");
     
     const profileUsername = mainPage.querySelector("span.name"),
-        profileColorCount = mainPage.querySelector("span.color-count"),
-        savedColorsTable = mainPage.querySelector("table.saved-colors");
-
+    profileColorCount = mainPage.querySelector("span.color-count"),
+    savedColorsTable = mainPage.querySelector("table.saved-colors");
+    
     const savedColors = JSON.parse(localStorage.getItem("currentUser")).savedColors;
     const username = JSON.parse(localStorage.getItem("currentUser")).username;
-        
+    
+    title.innerText = `HÜ - Profile (${username})`;
     profileUsername.innerHTML = `<h2>${username}</h2>`;
     profileColorCount.innerText = savedColors.length === 1
      ? `${savedColors.length} Saved Color`
