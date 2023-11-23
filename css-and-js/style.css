@@ -240,7 +240,7 @@ h4 {
 #home .main-page #p3 {
     scroll-snap-align: center;
     box-sizing: border-box;
-    flex: 1 0 420px;
+    flex: 1 0 500px;
     width: 90%;
     max-width: 1200px;
     
@@ -248,15 +248,21 @@ h4 {
     transition: all ease 300ms;
     
     display: grid;
-    padding: 0 40px;
-    gap: 0 12px;
-    align-content: center;
-    grid-template-columns: 50% 50% 50%;
+    padding: 40px 40px;
+    gap: 0 20px;
+    align-items: center;
     box-shadow: 0 8px 8px #e1e5eb77;
+    grid-template-columns: 55% 45%;
+}
+
+#home .main-page #p2 {
+    grid-template-columns: 45% 55%;
 }
 
 .text {
     color: #9194ab;
+    margin: 0 20px;
+    box-sizing: border-box;
 }
 
 .text h2 {
@@ -289,6 +295,22 @@ h4 {
     background-color: black;
     scroll-snap-align: end;
 }
+
+#home .main-page section .image {
+    overflow: hidden;
+    height: 100%;
+    margin: auto;
+    border-radius: 25%;
+}
+
+#home .main-page section:not(#intro) img {
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+}
+
 /* MAIN PAGE (End) */
 
 /* ------------ HOME (END) -------------------------------------------------------------------------------------------------------------------------------------- */
@@ -1180,6 +1202,39 @@ h4 {
     box-sizing: border-box;
 }
 
+#color-theory .main-page .color-sets .section-wrapper {
+    padding: 40px;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 36px 20px;
+}
+
+#color-theory .main-page .color-sets .section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    align-items: center;
+    align-items: center;
+    margin: 0 40px;
+}
+
+#color-theory .main-page .color-sets .section img {
+    border-radius: 20px;
+    width: 300px;
+    /* height: 250px; */
+    /* object-fit: contain; */
+}
+
+#color-theory .main-page .color-sets .section .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 8px;
+}
+
+
 /* ------------ COLOR THEORY (END) -------------------------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -1298,7 +1353,7 @@ h4 {
     width: 70%;
     max-width: 1200px;
     box-sizing: border-box;
-    margin: -36px;
+    margin-top: -36px;
 }
 
 #profile .saved-colors tr th {
@@ -1327,3 +1382,119 @@ h4 {
 }
 
 /* ------------ PROFILE (END) -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ------------ ROADMAP (START) -------------------------------------------------------------------------------------------------------------------------------------- */
+#roadmap .main-page {
+    flex: 1 1 auto;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px 0;
+    
+    padding: 40px;
+    margin: auto;
+    
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+#roadmap .main-page .intro {
+    width: 90%;
+    flex: 0 1;
+    max-width: 1200px;
+    
+    background-color: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    box-sizing: border-box;
+}
+
+#roadmap p {
+    color: #7a7c91;
+    font-size: 1.1rem;
+}
+
+#roadmap h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+
+#roadmap .main-page .intro .title-card {
+    color: white;
+    border-radius: 32px;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+}
+
+#roadmap .main-page .intro .title-card img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#roadmap .main-page .intro .title-card h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    white-space: nowrap;
+}
+
+#roadmap .main-page .phase-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 40px 40px;
+    max-width: 1200px;
+}
+
+#roadmap .main-page .phase .header {
+    background-image: linear-gradient(135deg, #f0571a, #f1316b);
+    color: white;
+    padding: 20px 40px;
+    border-radius: 40px 40px 4px 4px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+#roadmap .main-page .phase .info {
+    background-color: white;
+    padding: 40px;
+    border-radius: 4px 4px 40px 40px;
+    box-shadow: 0 4px 12px #e1e5eb;
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    color: #7f7f7f;
+}
+
+/* ------------ ROADMAP (END) -------------------------------------------------------------------------------------------------------------------------------------- */
